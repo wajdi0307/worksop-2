@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>List des contacts </title>
+
+</head>
+<body>
+<h1 class="center">Liste des contacts</h1>
+</body>
+<table border="1">
+    <tr>
+        <td>
+            Nom et prenom
+        </td>
+        <td>
+            GSM
+        </td>
+        <td>
+            Action
+        </td>
+    </tr>
+    {% for item in data %}
+    <tr>
+
+            <td>{{ item.FullName }}</td>
+            <td>{{ item.Phone }}</td>
+            <td><a href="/contact/delete/{{ item._id}}">delete</a>
+                <a href="/contact/modifier/{{ item._id}}">Modifier</a>
+            </td>
+
+    </tr>
+    {% endfor %}
+</table>
+</html>
