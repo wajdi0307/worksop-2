@@ -77,10 +77,7 @@ router.post('/search', function (req, res, next) {
         } else {
             res.render('getAllContacts.twig', { data });
         }
-        //     res.render('getAllContacts.twig', {data});
-        //     console.log(data);
-
-        // });
+       
     });
 });
 module.exports = router;

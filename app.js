@@ -10,7 +10,7 @@ var config=require('./database/db.json');
 mongoose.connect(config.mongo.uri,{useNewUrlParser: true, useUnifiedTopology: true}, ()=>console.log("success connection with DB"))
 
 var indexRouter = require('./routes/home');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/user');
 var contactsRouter = require('./routes/contact');
 
 var app = express();
@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/User', usersRouter);
 app.use('/contact', contactsRouter);
 
 // catch 404 and forward to error handler
